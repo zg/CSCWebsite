@@ -7,10 +7,6 @@ from pages.models import *
 
 register = template.Library()
 
-@register.inclusion_tag('pages/inclusionTemplates/repoInfo.html')
-def repoInfo(repo):
-	return repo
-
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)

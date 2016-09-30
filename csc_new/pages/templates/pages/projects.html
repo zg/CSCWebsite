@@ -1,0 +1,36 @@
+
+{% extends "csc_new/base.html" %}
+
+<!-- We have to load the extras in order to access the inclusion tags. -->
+{% load extras %}
+
+{% block head %}
+<title>Projects - RIT Computer Science Community</title>
+{% endblock %}
+
+{% block desc %}
+Check out a few of the CSC's featured projects, made by officers and members!
+{% endblock %}
+
+{% block content %}
+<!-- CONTENT GOES BETWEEN THESE TAGS -->
+
+
+<div class="space"></div>
+
+{% if success %}
+	{% for repo in repos %}
+		{% repoInfo repo %}
+	{% endfor %}
+{% else %}
+	<div>
+		Check out the CSC's projects on <a href="https://github.com/orgs/rit-csc">GitHub</a>!
+	</div>
+{% endif %}
+
+
+
+
+
+<!-- CONTENT GOES BETWEEN THESE TAGS -->
+{% endblock %}
